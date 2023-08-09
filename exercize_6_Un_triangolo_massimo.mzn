@@ -1,4 +1,3 @@
-% Use this editor as a MiniZinc scratch book
 include "globals.mzn";
 array[1..9] of var 1..9: triangle;
 var int: sum1;

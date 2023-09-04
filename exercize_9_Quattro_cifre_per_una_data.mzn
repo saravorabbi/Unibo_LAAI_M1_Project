@@ -2,7 +2,7 @@ include "globals.mzn";
 
 array [1..8] of var 0..9: date;
 var int: date_n;
-int: prev_date = 2021*365 + 9*31 + 19;
+int: date_prev = 2021*365 + 9*31 + 19;
 
 %constraint wrt old date 19.09.2021
 % days
@@ -18,14 +18,12 @@ constraint date[5] >= 2;
 constraint (date[5] == 2 /\ date[6] == 0) -> (date[7] >= 2);
 constraint (date[5] == 2 /\ date[6] == 0 /\ date[7] == 2) -> date[8] > 1;
 
-
 %constraint for the same value 2 times
 constraint forall(i in 1..8)(count(date, date[i], 2));
-constraint nvalue(4, date);
+%constraint nvalue(4, date);
 
 constraint date_n = (date[5]*1000 + date[6]*100 + date[7]*10 + date[8])*365 + (date[3]*10 + date[4])*30 + (date[1]*10 + date[2]);
 
-constraint date_n > prev_date;
+constraint date_n > date_prev;
 
 solve minimize  date_n;
-

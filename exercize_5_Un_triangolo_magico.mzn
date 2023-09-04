@@ -7,7 +7,6 @@ constraint triangle[4] == 5;
 constraint triangle[6] == 4;
 constraint triangle[9] == 7;
 
-
 constraint triangle[1] + triangle[2] + triangle[3] + triangle[4] == 20;
 constraint triangle[4] + triangle[5] + triangle[6] + triangle[7] == 20;
 constraint triangle[7] + triangle[8] + triangle[9] + triangle[1] == 20;

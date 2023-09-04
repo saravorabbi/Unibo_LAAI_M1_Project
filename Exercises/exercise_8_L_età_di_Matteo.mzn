@@ -9,5 +9,4 @@ constraint current_year = year[1]*1000 + year[2]*100 + year[3]*10 + year[4];  %2
 constraint age == current_year - 2000;
 constraint sum = sum(year) /\ sum = age / 5;
 
-%solve satisfy;
 solve maximize current_year;
